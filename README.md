@@ -1,7 +1,7 @@
 # 💳 Gerenciador de Cartões (Demonstração)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-![.NET Version](https://img.shields.io/badge/.NET-8.0-purple.svg)
+![.NET Version](https://img.shields.io/badge/.NET-10.0-purple.svg)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-Docker-blue.svg)
 
 Um sistema completo de gerenciamento de cartões de crédito e débito desenvolvido com **ASP.NET Core MVC** e **Entity Framework Core**. O projeto simula um ambiente seguro de cadastro de cartões, aplicando regras de negócio reais e boas práticas de arquitetura web, ideal para fins de estudo e portfólio.

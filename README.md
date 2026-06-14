@@ -26,7 +26,7 @@ Para ir além de um CRUD convencional, este projeto implementa regras reais de n
 
 ### 1. Painel Principal (Listagem)
 Exibe os cartões cadastrados em formato de "cards" visuais protegidos, identificando dinamicamente a bandeira de cada um.
-![Listagem de Cartões](https://raw.githubusercontent.com/SEU_USUARIO/GerenciadorCartoes/main/prints/index.png)
+![Listagem de Cartões](https://github.com/Erick-Vinicius-66/GerenciadorCartoes./blob/main/Prints%20do%20projeto/Tela%20Principal.png)
 
 ### 2. Cadastro e Validação
 Formulário com máscaras de entrada e validações impeditivas para dados corrompidos ou datas expiradas.

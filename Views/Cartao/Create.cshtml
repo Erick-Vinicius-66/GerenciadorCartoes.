@@ -1,0 +1,53 @@
+@model GerenciadorCartoes.Models.Cartao
+
+@{
+    ViewData["Title"] = "Cadastrar Cartão";
+}
+
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Cadastrar Cartão de Demonstração</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <!-- Sumário de erros caso a validação falhe -->
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="NomeTitular" class="form-label fw-bold"></label>
+                    <input asp-for="NomeTitular" class="form-control" placeholder="Ex: JOÃO A SILVA" />
+                    <span asp-validation-for="NomeTitular" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NumeroCartao" class="form-label fw-bold"></label>
+                    <input asp-for="NumeroCartao" class="form-control" placeholder="Digite apenas números (Ex: 4556...)" />
+                    <span asp-validation-for="NumeroCartao" class="text-danger small"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="DataValidade" class="form-label fw-bold"></label>
+                        <input asp-for="DataValidade" class="form-control" placeholder="MM/AA" />
+                        <span asp-validation-for="DataValidade" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Cvv" class="form-label fw-bold"></label>
+                        <input asp-for="Cvv" class="form-control" placeholder="Ex: 123" type="password" maxlength="4" />
+                        <span asp-validation-for="Cvv" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    <button type="submit" class="btn btn-success">Salvar Cartão</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+@model GerenciadorCartoes.Models.Cartao
+
+@{
+    ViewData["Title"] = "Excluir Cartão";
+}
+
+<div class="container mt-4" style="max-width: 500px;">
+    <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">⚠️ Confirmar Exclusão</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead text-center">Tem certeza que deseja excluir este cartão?</p>
+            <hr />
+            
+            <dl class="row">
+                <dt class="col-sm-4 text-muted">Bandeira:</dt>
+                <dd class="col-sm-8 fw-bold">@Model.Bandeira</dd>
+
+                <dt class="col-sm-4 text-muted">Titular:</dt>
+                <dd class="col-sm-8">@Model.NomeTitular.ToUpper()</dd>
+
+                <dt class="col-sm-4 text-muted">Número:</dt>
+                <dd class="col-sm-8 text-danger">@Model.NumeroMascarado</dd>
+
+                <dt class="col-sm-4 text-muted">Validade:</dt>
+                <dd class="col-sm-8">@Model.DataValidade</dd>
+            </dl>
+
+            <form asp-action="Delete" class="mt-4">
+                <input type="hidden" asp-for="Id" />
+                
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger">Sim, Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

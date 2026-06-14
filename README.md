@@ -22,19 +22,18 @@ Para ir além de um CRUD convencional, este projeto implementa regras reais de n
 
 ## 📸 Demonstração do Sistema
 
-> 💡 **Dica para o recrutador:** Como o sistema utiliza validação matemática estrita no campo do cartão, recomendo utilizar dados fictícios gerados por ferramentas de teste (como o gerador da *4Devs* ou similares) para testar os cadastros com sucesso.
-
 ### 1. Painel Principal (Listagem)
 Exibe os cartões cadastrados em formato de "cards" visuais protegidos, identificando dinamicamente a bandeira de cada um.
 ![Listagem de Cartões](https://github.com/Erick-Vinicius-66/GerenciadorCartoes./blob/main/Prints%20do%20projeto/Tela%20Principal.png)
 
 ### 2. Cadastro e Validação
 Formulário com máscaras de entrada e validações impeditivas para dados corrompidos ou datas expiradas.
-![Cadastro de Cartão](https://raw.githubusercontent.com/SEU_USUARIO/GerenciadorCartoes/main/prints/create.png)
+![Cadastro de Cartão](https://github.com/Erick-Vinicius-66/GerenciadorCartoes./blob/main/Prints%20do%20projeto/Tela%20Cadastro.png)
 
 ### 3. Exclusão Segura
-Tela de confirmação com dados mascarados antes de remover qualquer informação de forma definitiva do banco de dados.
-![Exclusão de Cartão](https://raw.githubusercontent.com/SEU_USUARIO/GerenciadorCartoes/main/prints/delete.png)
+Tela de confirmação com dados mascarados antes de remover qualquer informação de forma definitiva do banco de dados e de edição de dados caso for preciso.
+![Exclusão de Cartão](https://github.com/Erick-Vinicius-66/GerenciadorCartoes./blob/main/Prints%20do%20projeto/Tela%20de%20Exclus%C3%A3o.png)
+![Edição de Cartão](https://github.com/Erick-Vinicius-66/GerenciadorCartoes./blob/main/Prints%20do%20projeto/Tela%20Editar.png)
 
 ---
 
@@ -42,9 +41,9 @@ Tela de confirmação com dados mascarados antes de remover qualquer informaçã
 
 O projeto foi inteiramente desenvolvido em ambiente **Linux (Zorin OS)** utilizando o ecossistema moderno do .NET:
 
-* **Backend & Framework Web:** C# com ASP.NET Core MVC (Net 8.0)
+* **Backend & Framework Web:** C# com ASP.NET Core MVC (Net 10.0)
 * **Persistência de Dados:** Entity Framework Core (EF Core)
-* **Banco de Dados:** Microsoft SQL Server (Rodando em container Docker)
+* **Banco de Dados:** Microsoft SQL Server (Local)
 * **Frontend:** HTML5, CSS3, Bootstrap 5, Razor Views e JavaScript (jQuery)
 * **IDE/Editor:** Visual Studio Code com extensões oficiais da Microsoft e extensão de SQL Server.
 
@@ -64,12 +63,27 @@ Demonstração prática de conhecimentos exigidos no mercado para desenvolvedore
 ## 🏃‍♂️ Como Executar o Projeto Localmente
 
 ### Pré-requisitos
-* SDK do .NET (Versão 8.0 ou superior)
+* SDK do .NET (Versão 8.0, 10.0 ou superior)
 * Instância do SQL Server ativa (Local ou via Docker)
 
 ### Passo a Passo
 
 1. Clone o repositório para sua máquina local:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/GerenciadorCartoes.git](https://github.com/SEU_USUARIO/GerenciadorCartoes.git)
+   git clone [https://github.com/Erick-Vinicius-66/GerenciadorCartoes..git)
    cd GerenciadorCartoes
+
+2. Ajuste a string de conexão no arquivo appsettings.json com as credenciais do seu SQL Server:
+   ```bash
+     "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=GerenciadorCartoesDb;User Id=sa;Password=SuaSenhaAqui;TrustServerCertificate=True;"
+   }
+
+3. Instale a ferramenta do Entity Framework (caso não possua) e execute as Migrations para estruturar o banco de dados automaticamente::
+   ```bash
+     dotnet tool install --global dotnet-ef
+     dotnet ef database update
+
+4. Inicie a aplicação:
+   ```bash
+     dotnet run
